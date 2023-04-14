@@ -1,0 +1,11 @@
+C:\aldo\sharp\gerador\Gerador\Gerador\bin\Debug\Gerador.exe.config
+C:\aldo\sharp\gerador\Gerador\Gerador\bin\Debug\Gerador.exe
+C:\aldo\sharp\gerador\Gerador\Gerador\bin\Debug\Gerador.pdb
+C:\aldo\sharp\gerador\Gerador\Gerador\obj\Debug\Gerador.csproj.AssemblyReference.cache
+C:\aldo\sharp\gerador\Gerador\Gerador\obj\Debug\Gerador.csproj.SuggestedBindingRedirects.cache
+C:\aldo\sharp\gerador\Gerador\Gerador\obj\Debug\Gerador.Properties.Resources.resources
+C:\aldo\sharp\gerador\Gerador\Gerador\obj\Debug\Gerador.csproj.GenerateResource.cache
+C:\aldo\sharp\gerador\Gerador\Gerador\obj\Debug\Gerador.csproj.CoreCompileInputs.cache
+C:\aldo\sharp\gerador\Gerador\Gerador\obj\Debug\Gerador.exe
+C:\aldo\sharp\gerador\Gerador\Gerador\obj\Debug\Gerador.pdb
+C:\aldo\sharp\gerador\Gerador\Gerador\obj\Debug\Gerador.Form1.resources
