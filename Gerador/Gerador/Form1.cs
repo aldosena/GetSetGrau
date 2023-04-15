@@ -226,63 +226,55 @@ namespace Gerador
 
             txDao.Text = txDao.Text + " public function __construct() \n";
             txDao.Text = txDao.Text + " { \n";
-            parent::__construct();
+            txDao.Text = txDao.Text + "parent::__construct(); \n";
             txDao.Text = txDao.Text + " } \n";
             txDao.AppendText(Environment.NewLine);
 
-            public function selectAll()
-            {
-               $sql = "SELECT * from " + txTabela.Text + ;  
-                $st = $this->conexao_XXX->prepare($sql);
-                $st->execute();
-                return $st->fetchAll(PDO::FETCH_ASSOC);
-            }
+            txDao.Text = txDao.Text + " public function selectAll() \n";
+            txDao.Text = txDao.Text + " { \n";
+            txDao.Text = txDao.Text + "   $sql = 'SELECT * from " + txTabela.Text + " '; \n";
+            txDao.Text = txDao.Text + "   $stmt = $this->conexao_XXX->prepare($sql); \n";
+            txDao.Text = txDao.Text + "   $stmt->execute(); \n";
+            txDao.Text = txDao.Text + "   return $stmt->fetchAll(PDO::FETCH_ASSOC); \n";
+            txDao.Text = txDao.Text + " }\n";
 
-            public function selectById(int $id)
-            {
-    $sql = "select * from relator where idrelator = ?";
-    $st = $this->conexao_cred->prepare($sql);
-    $st->bindValue(1,$id);
-    $st->execute();
-                return $st->fetch(PDO::FETCH_ASSOC);
-            }
+            txDao.Text = txDao.Text + " public function selectById(int $id) \n";
+            txDao.Text = txDao.Text + " { \n";
+            txDao.Text = txDao.Text + "  $sql = 'select * from " + txTabela.Text + " where id = ?'; \n";
+            txDao.Text = txDao.Text + "  $stmt = $this->conexao_XXX->prepare($sql); \n";
+            txDao.Text = txDao.Text + "  $stmt->bindValue(1,$id); \n";
+            txDao.Text = txDao.Text + "  $stmt->execute(); \n";
+            txDao.Text = txDao.Text + "  return $stmt->fetch(PDO::FETCH_ASSOC); \n";
+            txDao.Text = txDao.Text + " } \n";
 
+            txDao.Text = txDao.Text + " public function insert(" + txClasse.Text + "Model $model) \n";
+            txDao.Text = txDao.Text + " { \n";
+            txDao.Text = txDao.Text + "  $sql = 'INSERT INTO " + txTabela.Text + "(x)VALUES(?)'; \n";
+            txDao.Text = txDao.Text + "  $stmt = $this->conexao_XXX->prepare($sql); \n";
+            txDao.Text = txDao.Text + "  $stmt->bindValue(1,$model->get_XXX()); \n";
+            txDao.Text = txDao.Text + "  $stmt->execute(); \n";
+            txDao.Text = txDao.Text + " } \n";
 
-            public function insert( + txClasse.Text +  Model $model)
-            {
-                $sql = "INSERT INTO " + txTabela.Text + (x)VALUES(?)";
-                    $st = $this->conexao_XXX->prepare($sql);
-                $st->bindValue(1,$model->get_XXX());
-                      $st->execute();
-            }
+            txDao.Text = txDao.Text + " public function update(" + txClasse.Text + "Model $model) \n";
+            txDao.Text = txDao.Text + " { \n";
+            txDao.Text = txDao.Text + "  $sql = 'UPDATE campoXXX=? FROM " + txTabela.Text + " WHERE id = ?'; \n";
+            txDao.Text = txDao.Text + "  $stmt = $this->conexao_xxx->prepare($sql); \n";
+            txDao.Text = txDao.Text + "  $stmt->bindValue(1,$model->get_relatornome()); \n";
+            txDao.Text = txDao.Text + "  return $stmt->execute(); \n";
+            txDao.Text = txDao.Text + " } \n";
 
-
-            public function update(RelatoresModel $model)
-            {
-                    $sql = "UPDATE XXX=? FROM + txTabela.Text +  WHERE id = ?";
-            $st = $this->conexao_xxx->prepare($sql);
-               $st->bindValue(1,$model->get_relatornome());
-                return $st->execute();
-            }
-
-
-            public function delete($id)
-            {
-                    $sql = "DELETE FROM + txTabela WHERE id = ?";
-                    $st = $this->conexao_XXX->prepare($sql);
-                    $st->bindValue(1, $id);
-                        return $st->execute();
-            }
-
-
-
-
+            txDao.Text = txDao.Text + " public function delete($id) \n";
+            txDao.Text = txDao.Text + " { \n";
+            txDao.Text = txDao.Text + "  $sql = 'DELETE FROM " + txTabela.Text + " WHERE id = ?'; \n";
+            txDao.Text = txDao.Text + "  $stmt = $this->conexao_XXX->prepare($sql); \n";
+            txDao.Text = txDao.Text + "  $stmt->bindValue(1, $id); \n";
+            txDao.Text = txDao.Text + "  return $stmt->execute(); \n";
+            txDao.Text = txDao.Text + " } \n";
 
             txDao.Text = txDao.Text + "} // class";
             txDao.AppendText(Environment.NewLine);
 
-
-        }// click
+        } // click on button
 
 
         private void button2_Click(object sender, EventArgs e)
