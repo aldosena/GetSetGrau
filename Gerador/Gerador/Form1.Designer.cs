@@ -30,6 +30,7 @@ namespace Gerador
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txClasse = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCampos = new System.Windows.Forms.TabPage();
@@ -74,26 +75,10 @@ namespace Gerador
             this.txDao = new System.Windows.Forms.TextBox();
             this.tabFormula = new System.Windows.Forms.TabPage();
             this.txFormNome = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.ckQuebra = new System.Windows.Forms.CheckBox();
-            this.txFmLabel = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txFmValor = new System.Windows.Forms.TextBox();
-            this.boxFmTipo = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txFmCampo = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txAction = new System.Windows.Forms.TextBox();
             this.txFormulario = new System.Windows.Forms.TextBox();
             this.btCriarForm = new System.Windows.Forms.Button();
-            this.btPegaCampoParaForm = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.ListaFm = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ListaForm = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.txAviso = new System.Windows.Forms.TextBox();
@@ -108,6 +93,7 @@ namespace Gerador
             this.cbGrauController = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txConexao = new System.Windows.Forms.TextBox();
+            this.btPegaCampo = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabCampos.SuspendLayout();
             this.tabMetodos.SuspendLayout();
@@ -116,8 +102,6 @@ namespace Gerador
             this.tabModel.SuspendLayout();
             this.tabDao.SuspendLayout();
             this.tabFormula.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txClasse
@@ -139,11 +123,10 @@ namespace Gerador
             this.tabControl1.Controls.Add(this.tabModel);
             this.tabControl1.Controls.Add(this.tabDao);
             this.tabControl1.Controls.Add(this.tabFormula);
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(8, 200);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1226, 403);
+            this.tabControl1.Size = new System.Drawing.Size(1226, 409);
             this.tabControl1.TabIndex = 1;
             // 
             // tabCampos
@@ -168,7 +151,7 @@ namespace Gerador
             this.tabCampos.Location = new System.Drawing.Point(4, 22);
             this.tabCampos.Name = "tabCampos";
             this.tabCampos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCampos.Size = new System.Drawing.Size(1218, 377);
+            this.tabCampos.Size = new System.Drawing.Size(1218, 383);
             this.tabCampos.TabIndex = 6;
             this.tabCampos.Text = "Campos";
             // 
@@ -320,7 +303,7 @@ namespace Gerador
             this.txFields.Name = "txFields";
             this.txFields.ReadOnly = true;
             this.txFields.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txFields.Size = new System.Drawing.Size(263, 295);
+            this.txFields.Size = new System.Drawing.Size(263, 301);
             this.txFields.TabIndex = 4;
             // 
             // txCampos
@@ -332,8 +315,9 @@ namespace Gerador
             this.txCampos.Multiline = true;
             this.txCampos.Name = "txCampos";
             this.txCampos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txCampos.Size = new System.Drawing.Size(312, 335);
+            this.txCampos.Size = new System.Drawing.Size(312, 341);
             this.txCampos.TabIndex = 3;
+            this.txCampos.TextChanged += new System.EventHandler(this.txCampos_TextChanged);
             // 
             // tabMetodos
             // 
@@ -351,7 +335,7 @@ namespace Gerador
             this.tabMetodos.Location = new System.Drawing.Point(4, 22);
             this.tabMetodos.Name = "tabMetodos";
             this.tabMetodos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMetodos.Size = new System.Drawing.Size(1218, 377);
+            this.tabMetodos.Size = new System.Drawing.Size(1218, 383);
             this.tabMetodos.TabIndex = 8;
             this.tabMetodos.Text = "Métodos";
             // 
@@ -589,160 +573,49 @@ namespace Gerador
             // 
             // tabFormula
             // 
+            this.tabFormula.Controls.Add(this.btPegaCampo);
             this.tabFormula.Controls.Add(this.txFormNome);
-            this.tabFormula.Controls.Add(this.label16);
-            this.tabFormula.Controls.Add(this.ckQuebra);
-            this.tabFormula.Controls.Add(this.txFmLabel);
-            this.tabFormula.Controls.Add(this.label15);
-            this.tabFormula.Controls.Add(this.txFmValor);
-            this.tabFormula.Controls.Add(this.boxFmTipo);
-            this.tabFormula.Controls.Add(this.label14);
-            this.tabFormula.Controls.Add(this.label13);
-            this.tabFormula.Controls.Add(this.label12);
-            this.tabFormula.Controls.Add(this.txFmCampo);
-            this.tabFormula.Controls.Add(this.label11);
-            this.tabFormula.Controls.Add(this.txAction);
             this.tabFormula.Controls.Add(this.txFormulario);
             this.tabFormula.Controls.Add(this.btCriarForm);
-            this.tabFormula.Controls.Add(this.btPegaCampoParaForm);
             this.tabFormula.Controls.Add(this.label10);
-            this.tabFormula.Controls.Add(this.ListaFm);
+            this.tabFormula.Controls.Add(this.ListaForm);
             this.tabFormula.Location = new System.Drawing.Point(4, 22);
             this.tabFormula.Name = "tabFormula";
             this.tabFormula.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFormula.Size = new System.Drawing.Size(1218, 377);
+            this.tabFormula.Size = new System.Drawing.Size(1218, 383);
             this.tabFormula.TabIndex = 11;
             this.tabFormula.Text = "Formulário";
             this.tabFormula.UseVisualStyleBackColor = true;
+            this.tabFormula.Click += new System.EventHandler(this.tabFormula_Click);
             // 
             // txFormNome
             // 
-            this.txFormNome.Location = new System.Drawing.Point(604, 25);
+            this.txFormNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txFormNome.Location = new System.Drawing.Point(29, 47);
             this.txFormNome.Name = "txFormNome";
-            this.txFormNome.Size = new System.Drawing.Size(208, 20);
+            this.txFormNome.Size = new System.Drawing.Size(589, 29);
             this.txFormNome.TabIndex = 16;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(569, 28);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(38, 13);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "Name:";
-            // 
-            // ckQuebra
-            // 
-            this.ckQuebra.AutoSize = true;
-            this.ckQuebra.Checked = true;
-            this.ckQuebra.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckQuebra.Location = new System.Drawing.Point(409, 23);
-            this.ckQuebra.Name = "ckQuebra";
-            this.ckQuebra.Size = new System.Drawing.Size(105, 17);
-            this.ckQuebra.TabIndex = 14;
-            this.ckQuebra.Text = "Quebra de Linha";
-            this.ckQuebra.UseVisualStyleBackColor = true;
-            // 
-            // txFmLabel
-            // 
-            this.txFmLabel.Location = new System.Drawing.Point(141, 21);
-            this.txFmLabel.Name = "txFmLabel";
-            this.txFmLabel.Size = new System.Drawing.Size(262, 20);
-            this.txFmLabel.TabIndex = 0;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(36, 25);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 13);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Label do Campo";
-            // 
-            // txFmValor
-            // 
-            this.txFmValor.Location = new System.Drawing.Point(141, 126);
-            this.txFmValor.Name = "txFmValor";
-            this.txFmValor.Size = new System.Drawing.Size(262, 20);
-            this.txFmValor.TabIndex = 3;
-            // 
-            // boxFmTipo
-            // 
-            this.boxFmTipo.AllowDrop = true;
-            this.boxFmTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.boxFmTipo.FormattingEnabled = true;
-            this.boxFmTipo.Items.AddRange(new object[] {
-            "+tx = text",
-            "+hd = hidden"});
-            this.boxFmTipo.Location = new System.Drawing.Point(141, 93);
-            this.boxFmTipo.Name = "boxFmTipo";
-            this.boxFmTipo.Size = new System.Drawing.Size(121, 21);
-            this.boxFmTipo.TabIndex = 2;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(36, 129);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(71, 13);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "Valor Padrão:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(36, 96);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(28, 13);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Tipo";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(36, 60);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(86, 13);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Nome do Campo";
-            // 
-            // txFmCampo
-            // 
-            this.txFmCampo.Location = new System.Drawing.Point(141, 59);
-            this.txFmCampo.Name = "txFmCampo";
-            this.txFmCampo.Size = new System.Drawing.Size(262, 20);
-            this.txFmCampo.TabIndex = 1;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(841, 28);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Action:";
-            // 
-            // txAction
-            // 
-            this.txAction.Location = new System.Drawing.Point(888, 25);
-            this.txAction.Name = "txAction";
-            this.txAction.Size = new System.Drawing.Size(187, 20);
-            this.txAction.TabIndex = 5;
+            this.txFormNome.Text = "<form id=\"fmNovo\" name=\"fmNovo\" method=\"POST\" action=\"#\">";
+            this.txFormNome.TextChanged += new System.EventHandler(this.txFormNome_TextChanged);
             // 
             // txFormulario
             // 
+            this.txFormulario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txFormulario.BackColor = System.Drawing.Color.White;
             this.txFormulario.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.txFormulario.Location = new System.Drawing.Point(572, 53);
+            this.txFormulario.Location = new System.Drawing.Point(29, 249);
             this.txFormulario.Multiline = true;
             this.txFormulario.Name = "txFormulario";
-            this.txFormulario.Size = new System.Drawing.Size(615, 296);
+            this.txFormulario.Size = new System.Drawing.Size(1166, 117);
             this.txFormulario.TabIndex = 4;
-            this.txFormulario.Text = "Criar formulário baseado nos campos ao lado.\r\nDefaut = Text;\r\nColoque simbolos no" +
-    " fim dos nome para mudar o tipo de texto\r\n+h = hidden\r\n+d = date\r\n+s = select\r\n";
+            this.txFormulario.Text = resources.GetString("txFormulario.Text");
+            this.txFormulario.TextChanged += new System.EventHandler(this.txFormulario_TextChanged);
             // 
             // btCriarForm
             // 
-            this.btCriarForm.Location = new System.Drawing.Point(1122, 22);
+            this.btCriarForm.Location = new System.Drawing.Point(553, 218);
             this.btCriarForm.Name = "btCriarForm";
             this.btCriarForm.Size = new System.Drawing.Size(65, 25);
             this.btCriarForm.TabIndex = 3;
@@ -750,58 +623,24 @@ namespace Gerador
             this.btCriarForm.UseVisualStyleBackColor = true;
             this.btCriarForm.Click += new System.EventHandler(this.btCriarForm_Click);
             // 
-            // btPegaCampoParaForm
-            // 
-            this.btPegaCampoParaForm.Location = new System.Drawing.Point(363, 152);
-            this.btPegaCampoParaForm.Name = "btPegaCampoParaForm";
-            this.btPegaCampoParaForm.Size = new System.Drawing.Size(40, 23);
-            this.btPegaCampoParaForm.TabIndex = 4;
-            this.btPegaCampoParaForm.Text = "Pegar Campos";
-            this.btPegaCampoParaForm.UseVisualStyleBackColor = true;
-            this.btPegaCampoParaForm.Click += new System.EventHandler(this.btPegaCampoParaForm_Click);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 355);
+            this.label10.Location = new System.Drawing.Point(26, 215);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 13);
+            this.label10.Size = new System.Drawing.Size(93, 13);
             this.label10.TabIndex = 1;
-            this.label10.Text = "Defaut= Text; +h = Hidden; ";
+            this.label10.Text = "tipos: tx; hd; st; ta;";
             // 
-            // ListaFm
+            // ListaForm
             // 
-            this.ListaFm.Location = new System.Drawing.Point(29, 181);
-            this.ListaFm.Multiline = true;
-            this.ListaFm.Name = "ListaFm";
-            this.ListaFm.Size = new System.Drawing.Size(523, 168);
-            this.ListaFm.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1218, 377);
-            this.tabPage1.TabIndex = 12;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(463, 341);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Column1";
-            this.Nome.Name = "Nome";
+            this.ListaForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListaForm.Location = new System.Drawing.Point(29, 82);
+            this.ListaForm.Multiline = true;
+            this.ListaForm.Name = "ListaForm";
+            this.ListaForm.Size = new System.Drawing.Size(589, 130);
+            this.ListaForm.TabIndex = 0;
+            this.ListaForm.TextChanged += new System.EventHandler(this.ListaFm_TextChanged);
             // 
             // label1
             // 
@@ -920,12 +759,22 @@ namespace Gerador
             this.txConexao.Size = new System.Drawing.Size(255, 20);
             this.txConexao.TabIndex = 21;
             // 
+            // btPegaCampo
+            // 
+            this.btPegaCampo.Location = new System.Drawing.Point(29, 18);
+            this.btPegaCampo.Name = "btPegaCampo";
+            this.btPegaCampo.Size = new System.Drawing.Size(136, 23);
+            this.btPegaCampo.TabIndex = 17;
+            this.btPegaCampo.Text = "Pegar Campos";
+            this.btPegaCampo.UseVisualStyleBackColor = true;
+            this.btPegaCampo.Click += new System.EventHandler(this.btPegaCampo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1246, 615);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1246, 621);
             this.Controls.Add(this.txConexao);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbGrauController);
@@ -943,6 +792,7 @@ namespace Gerador
             this.Controls.Add(this.txClasse);
             this.Name = "Form1";
             this.Text = "Gerador de Classes PHP";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.tabControl1.ResumeLayout(false);
             this.tabCampos.ResumeLayout(false);
@@ -959,8 +809,6 @@ namespace Gerador
             this.tabDao.PerformLayout();
             this.tabFormula.ResumeLayout(false);
             this.tabFormula.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1021,11 +869,8 @@ namespace Gerador
         private CheckBox checkBox3;
         private CheckBox checkBox2;
         private TabPage tabFormula;
-        private Button btPegaCampoParaForm;
         private Label label10;
-        private TextBox ListaFm;
-        private Label label11;
-        private TextBox txAction;
+        private TextBox ListaForm;
         private TextBox txFormulario;
         private Button btCriarForm;
         private CheckedListBox BoxCamposDao;
@@ -1033,20 +878,8 @@ namespace Gerador
         private Button btCriaEscola;
         private CheckedListBox checkedListBox1;
         private Button btFilterFilds;
-        private Label label12;
-        private TextBox txFmCampo;
-        private ComboBox boxFmTipo;
-        private Label label14;
-        private Label label13;
-        private TextBox txFmValor;
-        private TextBox txFmLabel;
-        private Label label15;
-        private CheckBox ckQuebra;
-        private TabPage tabPage1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Nome;
         private TextBox txFormNome;
-        private Label label16;
+        private Button btPegaCampo;
     }
 }
 

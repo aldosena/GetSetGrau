@@ -1015,54 +1015,24 @@ namespace Gerador
 
         private void btPegaCampoParaForm_Click(object sender, EventArgs e)
         {
-            // botão q pega o texto digitado e coloca no box
-            String mys = "";
-            String sQuebra = "";
-            if (txFmCampo.Text == "")
-            {
-                MessageBox.Show("Digite o nome do campo");
-                return;
-            }
-            if (boxFmTipo.Text == "")
-            {
-                MessageBox.Show("Escolha o tipo do Campo");
-                return;
-            }
-            if (ckQuebra.Checked == true)
-            {
-                sQuebra = "<br>";
-            }
-            //ListaFm.Text = ListaFmText + 
-            mys = "." + txFmLabel.Text + sQuebra
-                + "#" + txFmCampo.Text 
-                + boxFmTipo.Text.Substring(0,3) 
-                + '=' + txFmValor.Text;
-            ListaFm.Text = ListaFm.Text + mys;
-            ListaFm.AppendText(Environment.NewLine); // nova linha
-            txFmLabel.Text = "";
-            txFmCampo.Text = "";
-            txFmValor.Text = "";
         }
 
         private void btCriarForm_Click(object sender, EventArgs e)
         {
             // Cria um formulário ou campo para o formulário
             // se houver action. será criado o cabeçalho do form
-            Global.vTotCampo = ListaFm.Lines.Length;
+            Global.vTotCampo = ListaForm.Lines.Length;
             String s = ""; // local para manipulacao
             txFormulario.Text = "";
             if (txFormNome.Text != "")
             {
-                txFormulario.Text = "<form name= \"" + txFormNome + "\" method=\"POST\" action=\"" + txAction.Text + " target=\"_blank\">";
+                txFormulario.Text = txFormNome.Text;
                 txFormulario.AppendText(Environment.NewLine);
             }
-
-
-
             // pegar todos os campo
             for (int i = 0; i < Global.vTotCampo; i++)
             {
-                s = ListaFm.Lines[i];
+                s = ListaForm.Lines[i];
                 if (s.Substring(0, 1) == ".") // se for uma linha válida
                 {
                     txFormulario.Text = txFormulario.Text + txCampos.Lines[i] + "= :"; // escrever o campo
@@ -1136,7 +1106,59 @@ namespace Gerador
 
         } // botao - - - 
 
+        private void txCampos_TextChanged(object sender, EventArgs e)
+        {
 
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btPegaCampo_Click(object sender, EventArgs e)
+        {
+            ListaForm.Text = "";
+            // pegar campos do texto campo
+            foreach (string linha in txCampos.Lines)
+            {
+                if (linha.Trim() != "") // só inserer se houver dados na linha
+                {
+                    ListaForm.Text = ListaForm.Text + linha;
+                    ListaForm.AppendText(Environment.NewLine);
+                };
+            };
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txFormNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListaFm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txFormulario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabFormula_Click(object sender, EventArgs e)
+        {
+
+        }
     } // class
 } // name

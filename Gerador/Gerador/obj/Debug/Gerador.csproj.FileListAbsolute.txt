@@ -42,3 +42,13 @@ C:\aldo\sharp\GetSetGrau\Gerador\Gerador\obj\Debug\Gerador.csproj.GenerateResour
 C:\aldo\sharp\GetSetGrau\Gerador\Gerador\obj\Debug\Gerador.csproj.CoreCompileInputs.cache
 C:\aldo\sharp\GetSetGrau\Gerador\Gerador\obj\Debug\Gerador.exe
 C:\aldo\sharp\GetSetGrau\Gerador\Gerador\obj\Debug\Gerador.pdb
+C:\EraGit\GetSetGrau\Gerador\Gerador\obj\Debug\Gerador.csproj.AssemblyReference.cache
+C:\EraGit\GetSetGrau\Gerador\Gerador\obj\Debug\Gerador.Form1.resources
+C:\EraGit\GetSetGrau\Gerador\Gerador\obj\Debug\Gerador.Properties.Resources.resources
+C:\EraGit\GetSetGrau\Gerador\Gerador\obj\Debug\Gerador.csproj.GenerateResource.cache
+C:\EraGit\GetSetGrau\Gerador\Gerador\obj\Debug\Gerador.csproj.CoreCompileInputs.cache
+C:\EraGit\GetSetGrau\Gerador\Gerador\obj\Debug\Gerador.exe
+C:\EraGit\GetSetGrau\Gerador\Gerador\obj\Debug\Gerador.pdb
+C:\EraGit\GetSetGrau\Gerador\Gerador\bin\Debug\Gerador.exe.config
+C:\EraGit\GetSetGrau\Gerador\Gerador\bin\Debug\Gerador.exe
+C:\EraGit\GetSetGrau\Gerador\Gerador\bin\Debug\Gerador.pdb
